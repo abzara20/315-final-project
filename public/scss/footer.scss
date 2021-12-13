@@ -1,0 +1,102 @@
+footer {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  .top-section {
+    position: relative;
+    height: 65px;
+    width: 100%;
+
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    background-color: rgb(58, 32, 20);
+    color: white;
+
+    p {
+      margin: 0;
+    }
+    .text {
+      width: 425px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .find {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 140px;
+      }
+    }
+    .social-media {
+      width: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  }
+
+  .footer-links {
+    width: 100%;
+    min-height: 325px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    border-bottom: 1px solid black;
+    .column {
+      height: 285px;
+      width: 280px;
+      .section {
+        margin-bottom: 30px;
+        .email {
+          width: 261px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          input {
+            padding-left: 20px;
+            height: 35px;
+            width: 171px;
+            border: 2px solid rgb(165, 162, 162);
+            border-right: none;
+          }
+          button {
+            font-size: 15px;
+            height: 35px;
+            width: 90px;
+
+            background-color: transparent;
+            border: 2px solid rgb(252, 218, 24);
+          }
+        }
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: lighter;
+      }
+      p {
+        font-size: 15px;
+        margin: 5px;
+      }
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    font-style: italic;
+    width: 645px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: gray;
+  }
+}

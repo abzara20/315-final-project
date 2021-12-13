@@ -1,0 +1,112 @@
+.coffee {
+  width: 80%;
+  max-width: 1200px;
+
+  .hero {
+    width: 100%;
+    height: 210px;
+
+    background-image: url(../images/hero.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .dropdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    p {
+      margin: 0 5px 0 0;
+    }
+    .filter {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .select {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        max-width: 121px;
+        color: gray;
+        padding: 0 10px;
+        font-size: 15px;
+        background-color: transparent;
+        height: 50px;
+        border: 2px solid gray;
+        margin: 10px 5px;
+      }
+    }
+    .other {
+      p {
+        font-size: 10px;
+      }
+    }
+    .sort {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .cardContainer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    margin-bottom: 200px;
+
+    position: relative;
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+
+      padding: 10px 0;
+      margin-bottom: 30px;
+
+      width: 280px;
+      height: 600px;
+      box-shadow: 0 0 8px 4px rgb(206, 204, 204);
+
+      .cardImg {
+        width: 90%;
+        height: 250px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .cardText {
+        height: 40%;
+        width: 250px;
+        position: relative;
+        button {
+          position: absolute;
+          bottom: 0;
+          height: 50px;
+          width: 250px;
+
+          background-color: transparent;
+          border: 2px solid rgb(252, 218, 24);
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>315 Final Project</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="top">
+        <img class="logo" src="images/logo.svg" alt="keurig logo" />
+        <input type="text" placeholder="Search hundreds of ways to brew...." />
+        <div class="top__right">
+          <p>Free Shipping $29+</p>
+          <div class="user">
+            <i onclick="openAuth()" class="far fa-user fa-2x"></i>
+            <div class="cart">
+              <i
+                onclick="window.location.hash= '#/cart'"
+                class="fa-solid fa-2x fa-cart-shopping"
+              ></i>
+              <div class="cartCounter"></div>
+            </div>
+          </div>
+          <div id="authModal">
+            <button onclick="closeAuth()">x Close</button>
+            <div class="text">
+              <div class="logout form">
+                <button onclick="logout()">Logout</button>
+              </div>
+
+              <div class="login-section form">
+                <input id="liemail" type="text" placeholder="Email*" />
+                <input id="lipw" type="password" placeholder="Password*" />
+                <button onclick="login()">Sign In</button>
+              </div>
+              <hr />
+              <div class="signup-section form">
+                <input id="email" type="text" placeholder="Email*" />
+                <input id="pw" type="text" placeholder="Password*" />
+                <input id="fn" type="text" placeholder="First Name*" />
+                <input id="ln" type="text" placeholder="Last Name*" />
+                <button onclick="signup()">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <a href="#">COFFEE, TEA & MORE</a>
+        <a href="#/coffee">COFFEE MAKERS</a>
+        <a href="#">ACCESSORIES</a>
+        <a href="#">AUTO DELIVERY</a>
+        <a href="#">GET STARTED</a>
+        <a href="#">GIFT GUIDE</a>
+        <a class="redA" href="#"><i class="fas fa-tag"></i>DEALS</a>
+        <a href="#">CUSTOMIZE</a>
+      </div>
+    </nav>
+
+    <div id="app"></div>
+    <footer>
+      <div class="top-section">
+        <div class="text">
+          <div class="find">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Find a Store</p>
+          </div>
+          <div>
+            <p>Customer Support: 866-901-BREW</p>
+          </div>
+        </div>
+
+        <div class="social-media">
+          <p>Follow Us</p>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="column">
+          <div class="section">
+            <h1>Shop</h1>
+            <p>Coffee Makers</p>
+            <p>Beverages</p>
+          </div>
+          <div class="section">
+            <h1>Orders</h1>
+            <p>Track Your Order</p>
+            <p>Returns</p>
+            <p>Auto Delivery Orders</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <h1>Helpful Info</h1>
+          <p>Register Your Appliance</p>
+          <p>Support</p>
+          <p>Product Recall</p>
+          <p>Business Solution</p>
+          <p>Site Map</p>
+          <p>Contact Us</p>
+          <p>CA Privacy Rights</p>
+          <p>Do Not Sell My Personal Information</p>
+        </div>
+
+        <div class="column">
+          <h1>About Us</h1>
+          <p>About Us</p>
+          <p>News</p>
+          <p>Careers</p>
+          <p>Sustainability</p>
+          <p>Rewards Program</p>
+          <p>Accepted Payments</p>
+        </div>
+
+        <div class="column">
+          <div class="section">
+            <h1>Join our Mailing List</h1>
+            <p>
+              Stay up-to-date with the latest news and new arrivals direct to
+              your inbox.
+            </p>
+            <div class="email">
+              <input type="text" placeholder="Your email" />
+              <button>Sign Up</button>
+            </div>
+          </div>
+          <div class="section">
+            <h1>Select Country</h1>
+            <div class="country">
+              <div class="background"></div>
+              <div class="drop">
+                <p>United States</p>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2021 Keurig Green Mountain, Inc. - All Rights Reserved</p>
+        <p>Terms of Use</p>
+        <p>Privacy Policy</p>
+        <p>Modern Slavery Act</p>
+      </div>
+    </footer>
+    <!-- FIREBASE JAVASCRIPT LINKS -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.5.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.5.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.5.0/firebase-database-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.5.0/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.5.0/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.5.0/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/9.5.0/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.5.0/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.5.0/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.5.0/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <!-- my javascripts -->
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="app/model.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

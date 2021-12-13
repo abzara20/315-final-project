@@ -1,0 +1,28 @@
+.userCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 80%;
+  max-width: 1200px;
+  p {
+    margin: 0;
+  }
+  min-height: 200px;
+
+  .productsContainer {
+    min-height: 295px;
+    background-color: #e7e4df;
+    border-radius: 25px;
+    padding: 15px;
+    width: 70%;
+  }
+  .summary {
+    margin-left: 10px;
+    height: 295px;
+    width: 28%;
+    box-shadow: 0 0 8px 4px rgb(206, 204, 204);
+    border-radius: 25px;
+    padding: 10px;
+  }
+}
