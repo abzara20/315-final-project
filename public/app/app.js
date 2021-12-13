@@ -89,7 +89,7 @@ function logout() {
       $(`.signup-section`).css("display", "block");
       document.getElementById(`authModal`).className = "";
 
-      clear();
+      clearCart();
     })
     .catch((error) => {
       // An error happened.
@@ -117,6 +117,16 @@ function openAuth() {
 
 function closeAuth() {
   $(`#authModal`).css("display", "none");
+}
+
+function showNav() {
+  $(`.mobile-nav`).css("display", "flex");
+  $(`.mobile-nav`).css("z-index", "99");
+}
+
+function hideNav() {
+  $(`.mobile-nav`).css("display", "none");
+  $(`.mobile-nav`).css("z-index", "-99");
 }
 
 function loadCart() {
@@ -154,17 +164,42 @@ function loadCart() {
         <p>Total: $${(subtotal + tax).toFixed(2)}</p>
       </div>
       <div>
-      <button onclick="clear()">Clear Cart</button>
+      <button onclick="clearCart()">Clear Cart</button>
       </div>
       </div>`
     );
+    $.each(cart, function (index, item) {
+      $(`.productsContainer`).append(`
+      <div class="item">
+      <div class="top">
+      <button onclick="removeItem(${index})">x</button>
+      </div>
+      <div class="itemContent">
+      <div class="itmbackground" style="background-image: url(../images/${item.image});"></div>
+      <div class="name">
+      <p>${item.name}</p>
+      </div>
+      <div class="cost">
+      <p>$${item.price}</p>
+      </div>
+      </div>
+      </div>
+      `);
+    });
   }
 }
 
-function clear() {
+function removeItem(i) {
+  cart.splice(i, 1);
+  $(`.cartCounter`).html(`<p>${cart.length}</p>`);
+
+  MODEL.pgChange("cart", loadCart);
+}
+
+function clearCart() {
   cart = [];
   $(`.cartCounter`).css("display", "none");
-  loadCart();
+  MODEL.pgChange("cart", loadCart);
 }
 
 function updateCart(i) {
@@ -209,6 +244,10 @@ function coffeeData() {
 function initListeners() {
   $(window).on("hashchange", route);
   route();
+
+  $(`.mobile-menu a`).click(function (e) {
+    hideNav();
+  });
 }
 
 $(document).ready(function () {
@@ -216,6 +255,7 @@ $(document).ready(function () {
     initListeners();
     initFirebase();
     console.log("working");
+    hideNav();
   } catch {
     console.log("fail to start");
   }

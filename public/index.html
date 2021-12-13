@@ -13,8 +13,29 @@
   <body>
     <nav>
       <div class="top">
+        <div class="mobile">
+          <i onclick="showNav()" class="fas fa-2x fa-bars"></i>
+          <div class="mobile-nav">
+            <div class="mobile-menu">
+              <a href="#">COFFEE, TEA & MORE</a>
+              <a href="#/coffee">COFFEE MAKERS</a>
+              <a href="#">ACCESSORIES</a>
+              <a href="#">AUTO DELIVERY</a>
+              <a href="#">GET STARTED</a>
+              <a href="#">GIFT GUIDE</a>
+              <a class="redA" href="#"><i class="fas fa-tag"></i>DEALS</a>
+              <a href="#">CUSTOMIZE</a>
+            </div>
+            <div class="mobile-bg" onclick="hideNav()"></div>
+          </div>
+        </div>
+
         <img class="logo" src="images/logo.svg" alt="keurig logo" />
-        <input type="text" placeholder="Search hundreds of ways to brew...." />
+        <input
+          class="mainInput"
+          type="text"
+          placeholder="Search hundreds of ways to brew...."
+        />
         <div class="top__right">
           <p>Free Shipping $29+</p>
           <div class="user">
@@ -51,6 +72,13 @@
           </div>
         </div>
       </div>
+
+      <input
+        class="mobileInput"
+        type="text"
+        placeholder="Search hundreds of ways to brew...."
+      />
+
       <div class="links">
         <a href="#">COFFEE, TEA & MORE</a>
         <a href="#/coffee">COFFEE MAKERS</a>
@@ -61,6 +89,7 @@
         <a class="redA" href="#"><i class="fas fa-tag"></i>DEALS</a>
         <a href="#">CUSTOMIZE</a>
       </div>
+      <div class="deals">Today's Deals +</div>
     </nav>
 
     <div id="app"></div>
@@ -71,7 +100,7 @@
             <i class="fas fa-map-marker-alt"></i>
             <p>Find a Store</p>
           </div>
-          <div>
+          <div class="support">
             <p>Customer Support: 866-901-BREW</p>
           </div>
         </div>
